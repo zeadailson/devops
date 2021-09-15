@@ -18,10 +18,10 @@ https://github.com/jonathanbaraldi/devops
 
 ```sh
 
-$ ssh -i devops-ninja.pem ubuntu@<ip>  - RancherSerber - HOST A
-$ ssh -i devops-ninja.pem ubuntu@<ip>  - k8s-1         - HOST B
-$ ssh -i devops-ninja.pem ubuntu@<ip>  - k8s-2         - HOST C
-$ ssh -i devops-ninja.pem ubuntu@<ip>  - k8s-3         - HOST D
+$ ssh -i teste-k8s.pem ubuntu@35.84.21.126  - RancherServer - HOST A
+$ ssh -i teste-k8s.pem ubuntu@52.27.176.4  - k8s-1         - HOST B
+$ ssh -i teste-k8s.pem ubuntu@52.13.4.87  - k8s-2         - HOST C
+$ ssh -i teste-k8s.pem ubuntu@54.214.115.4  - k8s-3         - HOST D
 
 $ sudo su
 $ curl https://releases.rancher.com/install-docker/19.03.sh | sh
@@ -153,7 +153,7 @@ Nesse exercício iremos instalar o Rancher 2.2.5 versão single node. Isso signi
 Entrar no host A, que será usado para hospedar o Rancher Server. Iremos verficar se não tem nenhum container rodando ou parado, e depois iremos instalar o Rancher.
 ```sh
 $ docker ps -a
-$ docker run -d --name rancher --restart=unless-stopped -v /opt/rancher:/var/lib/rancher  -p 80:80 -p 443:443 rancher/rancher:v2.4.3
+$ docker run -d --name rancher --restart=unless-stopped -v /opt/rancher:/var/lib/rancher  -p 80:80 -p 443:443 rancher/rancher:v2.6.0
 ```
 Com o Rancher já rodando, irei adicionar a entrada de cada DNS para o IP de cada máquina.
 
